@@ -1,5 +1,3 @@
-from http.cookiejar import debug
-
 from flask import Flask, jsonify
 from flask_cors import CORS
 import os
@@ -14,7 +12,7 @@ def home():
         'message': 'API системы учета товаров',
         'version': '1.0.0',
         'endpoint': {
-            'GET /': 'Информация об API'
+            'GET /': 'Информация об API',
             'GET /health': 'Проверка состояния сервера'
         }
     })
@@ -22,6 +20,7 @@ def home():
 @app.route('/health')
 def health_check():
     return jsonify({'status': 'ok'}), 200
+
 if __name__ == '__main__':
     if not os.path.exists('data'):
         os.makedirs('data')
