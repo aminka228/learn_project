@@ -71,6 +71,21 @@ function setupEventlisteners() {
           }
      });
 }
+document.addEventListener('DOMContentLoaded', initApp);
+function  formatDate(date) {
+    return date.toLocaleString('ru-RU');
+}
+window.appDebug = {
+    checkApiStatus: checkApiStatus,
+    stopApiMonitoring: stopApiMonitoring,
+    formatDate: formatDate,
+}
+
+console.log('Для откладки используйте window.appDebug в консоли браузера (F12)');
+console.log('Доступные команды:');
+console.log(' window.appDebug.checkApiStatus() - проверить API');
+console.log(' window.appDebug.stopApiMonitoring() - остановить проверку');
+console.log(' window.appDebug.formatDate()) - форматировать дату');
 
 
 
