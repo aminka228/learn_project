@@ -57,7 +57,7 @@ function stopApiMonitoring() {
 function initApp() {
      console.log('Приложение инициализируется...');
      startApiMonitoring();
-     setupEventListeners();
+     setupEventlisteners();
      console.log('Приложение готово к работе');
 }
 

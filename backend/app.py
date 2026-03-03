@@ -21,6 +21,14 @@ def home():
 def health_check():
     return jsonify({'status': 'ok'}), 200
 
+@app.route('/api/status')
+def api_status():
+    return jsonify({
+        'status': 'working',
+        'version': '1.0.0',
+        'message': 'API работает'
+    })
+
 if __name__ == '__main__':
     if not os.path.exists('data'):
         os.makedirs('data')
